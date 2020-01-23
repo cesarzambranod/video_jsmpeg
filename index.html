@@ -1,0 +1,18 @@
+<html>
+<body>
+<script type="text/javascript" src="assets/jsmpeg2.js"></script>
+<div id="divXXX" style="display: block; position: relative; width: 100%; height: 100%;"><canvas id="xxxxx" width="640" height="360" style="display: block;"></canvas></div>
+
+<script type="text/javascript">
+    var cur_video = 26306702
+    var canvasa = document.getElementById("xxxxx");
+    //console.log(canvasa);
+    var player = new JSMpeg.Player(cur_video+".ts", {canvas:canvasa,loop:false, autoplay:true, onEnded:pruebaEnd});
+    function pruebaEnd(e) {
+        alert('termino el video..........................', e)
+        cur_video += 1;
+        var player = new JSMpeg.Player(cur_video+".ts", {canvas:canvasa,loop:false, autoplay:true, onEnded:pruebaEnd});
+    }
+</script>
+</body>
+</html>
